@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rise-Rise</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./src/explosion.js"></script>
+    <script src="./src/level.js"></script>
+    <script src="./src/player.js"></script>
+    <script src="./src/main.js"></script>
+
+</head>
+
+<body onLoad="new Game()">
+    <!--init()"-->
+    <!--new Game()-->
+
+    <script>
+        var lastSide = -1;
+        var sideCnt = 0;
+
+        function init() {
+            for (var r = 0; r < 1200; r += 150) {
+                var s = 0; //Math.floor(Math.random() * 2);
+                if (lastSide === s) {
+                    if (++sideCnt > 4) {
+                        s = (s + 1) % 2;
+                        sideCnt = 1;
+                    }
+                } else {
+                    sideCnt = 1;
+                }
+                lastSide = s;
+                /*if (s === 1) {
+                    console.log('1');
+                } else {
+                    console.log('0');
+                }*/
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
